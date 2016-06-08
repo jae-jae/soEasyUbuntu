@@ -53,7 +53,7 @@ function get_fast_mirror()
 function backup_sources()
 {
     echo -e "Backup your sources.list.\n"
-    sudo mv /etc/apt/sources.list /etc/apt/sources.list.`date +%F-%R:%S`
+     mv /etc/apt/sources.list /etc/apt/sources.list.`date +%F-%R:%S`
 }
 
 function update_sources()
@@ -74,8 +74,8 @@ function update_sources()
 	echo "deb-src $mirror $VERSION-security $COMP" >> $tmp 
 	echo "deb-src $mirror $VERSION-proposed $COMP" >> $tmp
 
-    sudo mv "$tmp" /etc/apt/sources.list
-    echo -e "Your sources has been updated, and maybe you want to run \"sudo apt-get update\" now.\n";
+     mv "$tmp" /etc/apt/sources.list
+    echo -e "Your sources has been updated, and maybe you want to run \" apt-get update\" now.\n";
 }
 
 echo -e "\nTesting the network connection.\nPlease wait...   \c"
